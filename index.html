@@ -1,0 +1,113 @@
+<!--Write "html:5" to get the outline autofilled.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carter's Test Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <header>
+            <div id="headerWrapper">
+                <div id="pfp">
+                    <img src="Images/pic.jpg" alt="My Picture" width="150">
+                </div>
+
+                <div id="headerInfo">
+                    <h1 style="color: darkorange;"> Carter Recore</h1>
+                    <h2 id="job">Field Service Tech</h2>
+                </div>
+            </div>
+
+            <ul id="topMenuBar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Languages</a></li>
+            </ul>
+        </header>
+
+        <section id="content">
+            <div id="sideMenu">
+                <section>
+                    <h2>Contact Form</h2>
+
+                    <form action="" method="post">
+
+                        <label for="contact-email">Email:</label>
+                        <input type="email" name="email" id="contact-email" placeholder="name@example.com" required><br>
+
+                        <!-- <label for="userPSWD">Password:</label>
+                        <input type="password" name="password" id="userPSWD"><br> -->
+
+                        <label for="contact-name">Name:</label>
+                        <input type="text" name="name" id="contact-name" placeholder="Your Name" required><br>
+
+                        <label for="contact-reason">Reason:</label>
+                        <input type="text" name="reason" id="contact-reason" placeholder="Why contact us?" required><br>
+
+                        <button type="submit">Contact Us</button>
+                    </form>
+                </section>
+                
+                <section>
+                    <h2>Rubik's Face</h2>
+
+                    <div class="rubikFace">
+                        <div style="background: #0082df;"></div>
+                        <div style="background: #ffff00;"></div>
+                        <div style="background: #ff2c0a;"></div>
+                        <div style="background: #0082df;"></div>
+                        <div style="background: #ffff00;"></div>
+                        <div style="background: #ff2c0a;"></div>
+                        <div style="background: #0082df;"></div>
+                        <div style="background: #ffff00;"></div>
+                        <div style="background: #ff2c0a;"></div>
+                    </div>
+                </section>
+
+            </div>
+
+            <div id="main">
+                <div class="page" id="home">
+                    <p id="firstPLine">Hello, this is a <strong>TEST.</strong></p>
+
+                    <p>This is another test line.</p>
+
+                    <p>Crazy? I was crazy once...</p>
+                </div>
+
+                <div class="page" id="skills">
+                    <h2>Skills</h2>
+
+                    <ul>
+                        <li>HTML - 1</li>
+                        <li class="favSkill">C++ - 3</li>
+                        <li>C# - 2</li>
+                    </ul>
+                </div>
+
+                <div class="page" id="projects">
+                    <h2>Projects</h2>
+                    <p>These are my projects</p>
+                </div>
+
+                <div class="page" id="languages">
+                    <h2>Known Languages</h2>
+
+                    <table border="1">
+                        <tr><th>Language</th><th>Level</th></tr>
+                            
+                        <tr><td>English</td><td>Native</td></tr>
+                        <tr><td>Spanish</td><td>High School</td></tr>
+                    </table><br>
+                </div>
+            </div>
+        </section>
+
+        <footer><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Funny video</a></footer>
+
+        <script src="index.js"></script>
+    </body>
+</html>

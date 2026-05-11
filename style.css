@@ -1,0 +1,42 @@
+html {height: 100%;}
+
+body {min-height: 100%; margin: 0;  background: rgb(95, 95, 95); display: flex; flex-direction: column;}
+
+p {color: blue}
+
+footer {min-height: 24px; padding: 10px 10px 8px 10px; text-align: center; background-color: indigo;}
+footer a {color: black;}
+
+#headerWrapper {display: flex; flex-direction: row; align-items: center; background: linear-gradient(45deg, indigo, transparent);}
+#headerWrapper h1, h2 {margin: 5px 0;}
+
+#headerInfo {flex: 1;}
+
+#pfp {padding: 5px;}
+#pfp img {border-radius: 50%; border: 4px solid red;}
+
+#content {flex: 1; display: flex; flex-direction: row} /*"Flex: 1" will force the body of the page to take up the full screen*/
+
+#sideMenu {flex: 1; padding: 10px 5px 5px 10px;}
+#sideMenu > section {margin-bottom: 10px; padding: 10px; box-shadow: 0 0 0 1px rgb(0 0 0 / 15%), 0 2px 3px rgb(0 0 0 / 20%); border-radius: 2px;}
+#sideMenu > section h2 {margin: 0 0 10px 0;}
+
+#main {flex: 2; padding: 10px 10px 10px 5px}
+
+#job {color: white; text-align: right}
+
+#firstPLine {width: 150px; background-color: yellow; border: 4px dashed green;}
+
+#topMenuBar {text-align: center; background-color: #334455; color: #fff; margin: 0; padding: 0;}
+#topMenuBar li {display: inline; margin: 0; padding: 0;}
+#topMenuBar a {text-decoration: none; margin: 4px 0; padding: 5px 15px; color: #fff; display: inline-block; border-radius: 0.2em; transition: 0.5s;} /*Border-radius rounds out the edges*/
+#topMenuBar a:hover, #topMenuBar a.active {color: #fff; background-color: darkgray;}
+#topMenuBar a:visited {color: black;}
+
+.page {display: none; padding: 24px; background: #d3d3d3; margin-bottom: 10px; box-shadow: 0 0 0 1px rgb(0 0 0 / 15%), 0 2px 3px rgb(0 0 0 / 20%); border-radius: 2px;}
+.page h2 {margin: 0;}
+
+.favSkill {color: fuchsia; font-weight: bold;}
+
+.rubikFace {background-color: #0d0d0d; display: grid; grid-template-columns: auto auto auto; max-width: 200px; padding: 4px; grid-gap: 4px;}
+.rubikFace > div {border: 1px solid #0d0d0d33; padding-top: 100%; background-color: white; border-radius: 0.2em;}

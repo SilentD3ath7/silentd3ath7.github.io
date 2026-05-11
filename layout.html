@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Example</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        header, footer, #content {padding: 4px; margin: 2px; border: 5px solid blue; background-color: #d3eafd;}
+
+        #content > div, #sideMenu section {padding: 4px; margin: 2px; border: 2px solid red}
+        /*">" means only the parent(s) on the right that are inside the left. EX: The parent "divs" inside of "content"*/
+
+        #sideMenu section {border-color: green}
+    </style>
+</head>
+<body>
+    <header>H</header>
+
+    <section id="content">
+        <div id="sideMenu">
+            <section>Menu1</section>
+            <section>Menu2</section>
+        </div>
+        <div id="main">Main</div>
+    </section>
+
+    <footer>F</footer>
+</body>
+</html>
