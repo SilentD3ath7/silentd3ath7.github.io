@@ -1,3 +1,5 @@
+var activePage = "home";
+
 function hide(id)
 {
     document.getElementById(id).style.display = "none";
@@ -8,41 +10,44 @@ function show(id)
     document.getElementById(id).style.display = "block";
 }
 
-function showHomePage()
+/*function showHomePage()
 {
+    hide(activePage);
     show("home");
-    hide("skills");
-    hide("projects");
-    hide("languages");
+    activePage = "home";
 }
 
 function showSkillsPage()
 {
-    hide("home");
+    hide(activePage);
     show("skills");
-    hide("projects");
-    hide("languages");
+    activePage = "skills";
 }
 
 function showProjectPage()
 {
-    hide("home");
-    hide("skills");
+    hide(activePage);
     show("projects");
-    hide("languages");
+    activePage = "projects";
 }
 
 function showLanguagesPage()
 {
-    hide("home");
-    hide("skills");
-    hide("projects");
+    hide(activePage);
     show("languages");
+    activePage = "languages";
+}*/
+
+function showPage(id)
+{
+    hide(activePage);
+    show(id);
+    activePage = id;
 }
 
-showHomePage();
+showPage(activePage);
 
-var homeLink = document.querySelectorAll("#topMenuBar a")[0];
+/*var homeLink = document.querySelectorAll("#topMenuBar a")[0];
 homeLink.addEventListener("click", showHomePage);
 
 var skillsLink = document.querySelectorAll("#topMenuBar a")[1];
@@ -52,4 +57,11 @@ var projectsLink = document.querySelectorAll("#topMenuBar a")[2];
 projectsLink.addEventListener("click", showProjectPage);
 
 var languagesLink = document.querySelectorAll("#topMenuBar a")[3];
-languagesLink.addEventListener("click", showLanguagesPage);
+languagesLink.addEventListener("click", showLanguagesPage);*/
+
+document.querySelector("#topMenuBar").addEventListener("click", function(e)
+{
+    var id = e.target.dataset.page;
+    console.info("click on menuBar", id);
+    showPage(id);
+});
