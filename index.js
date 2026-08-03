@@ -78,11 +78,18 @@ $("#topMenuBar").addEventListener("click", function(e)
 });
 
 
-var skills = ["HTML - 4", "C++ - 1", "C# - 3", "JavaScript - 7"];
+var skills = 
+[
+    {name: "HTML", endorcements: 2}, 
+    {name: "C++", endorcements: 7, favSkill: true}, 
+    {name: "C#", endorcements: 5}, 
+    {name: "JavaScript", endorcements: 4, favSkill: true}
+];
 var skillsMapResult = skills.map(function(skill)
 {
-    console.info("inside map", skill);
-    return `<li>${skill}</li>`
+    var cls = skill.favSkill ? "favSkill" : "";
+    //console.info("inside map", cls, skill);
+    return `<li class="${cls}">${skill.name} <span>- ${skill.endorcements}</span></li>`
 });
 //console.warn("Result:", skillsMapResult);
 $("#skills ul").innerHTML = skillsMapResult.join("");
