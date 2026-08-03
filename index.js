@@ -1,4 +1,10 @@
-var activePage = "home";
+var activePage = "skills";
+
+// This will act as a shortcut function. Basically it turns the basic $ into whatever I need it to
+function $(selector)
+{
+    return document.querySelector(selector);
+}
 
 function hide(id)
 {
@@ -41,7 +47,9 @@ function showLanguagesPage()
 function showPage(id)
 {
     hide(activePage);
+    $(`#topMenuBar a[data-page="${activePage}"]`).classList.remove("active");
     show(id);
+    $(`#topMenuBar a[data-page="${id}"]`).classList.add("active");
     activePage = id;
 }
 
@@ -59,9 +67,22 @@ projectsLink.addEventListener("click", showProjectPage);
 var languagesLink = document.querySelectorAll("#topMenuBar a")[3];
 languagesLink.addEventListener("click", showLanguagesPage);*/
 
-document.querySelector("#topMenuBar").addEventListener("click", function(e)
+$("#topMenuBar").addEventListener("click", function(e)
 {
     var id = e.target.dataset.page;
     console.info("click on menuBar", id);
-    showPage(id);
+    if (id)
+    {
+        showPage(id);
+    }    
 });
+
+
+var skills = ["HTML - 4", "C++ - 1", "C# - 3", "JavaScript - 7"];
+var skillsMapResult = skills.map(function(skill)
+{
+    console.info("inside map", skill);
+    return `<li>${skill}</li>`
+});
+//console.warn("Result:", skillsMapResult);
+$("#skills ul").innerHTML = skillsMapResult.join("");
