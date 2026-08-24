@@ -1,0 +1,6 @@
+[
+    {"name": "HTML", "endorcements": 2}, 
+    {"name": "C++", "endorcements": 7, "favSkill": true}, 
+    {"name": "C#", "endorcements": 5}, 
+    {"name": "JavaScript", "endorcements": 4, "favSkill": true}
+]

@@ -1,4 +1,4 @@
-var activePage = "skills";
+var activePage = "home";
 
 // This will act as a shortcut function. Basically it turns the basic $ into whatever I need it to
 function $(selector)
@@ -77,19 +77,23 @@ $("#topMenuBar").addEventListener("click", function(e)
     }    
 });
 
-
-var skills = 
-[
-    {name: "HTML", endorcements: 2}, 
-    {name: "C++", endorcements: 7, favSkill: true}, 
-    {name: "C#", endorcements: 5}, 
-    {name: "JavaScript", endorcements: 4, favSkill: true}
-];
-var skillsMapResult = skills.map(function(skill)
+fetch("skills.json") // Convert the json file into the dynamic array
+.then(function (response) 
 {
-    var cls = skill.favSkill ? "favSkill" : "";
-    //console.info("inside map", cls, skill);
-    return `<li class="${cls}">${skill.name} <span>- ${skill.endorcements}</span></li>`
-});
-//console.warn("Result:", skillsMapResult);
-$("#skills ul").innerHTML = skillsMapResult.join("");
+    console.info("Done?");
+    return response.json();
+})
+.then(function(skills) {printSkills(skills);});
+
+function printSkills(skills) // Allows the skills array to be dynamic
+{
+    //var skills = [];
+    var skillsMapResult = skills.map(function(skill)
+    {
+        var cls = skill.favSkill ? "favSkill" : ""; // "?" acts as an If statement
+        //console.info("inside map", cls, skill);
+        return `<li class="${cls}">${skill.name} <span>- ${skill.endorcements}</span></li>`
+    });
+    //console.warn("Result:", skillsMapResult);
+    $("#skills ul").innerHTML = skillsMapResult.join("");
+}
