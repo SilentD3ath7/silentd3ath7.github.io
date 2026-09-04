@@ -1,4 +1,4 @@
-var activePage = "home";
+var activePage = "skills";
 
 // This will act as a shortcut function. Basically it turns the basic $ into whatever I need it to
 function $(selector)
@@ -87,6 +87,8 @@ fetch("skills.json") // Convert the json file into the dynamic array
 
 function printSkills(skills) // Allows the skills array to be dynamic
 {
+    skills = sortSkillsByEndorcements(skills);
+
     //var skills = [];
     var skillsMapResult = skills.map(function(skill)
     {
@@ -96,4 +98,22 @@ function printSkills(skills) // Allows the skills array to be dynamic
     });
     //console.warn("Result:", skillsMapResult);
     $("#skills ul").innerHTML = skillsMapResult.join("");
+}
+
+function sortSkillsByEndorcements(skills) // Sorts the skills by number from highest to lowest
+{
+    return skills.sort(function (a, b) 
+    {
+        console.log(a, b);
+        return b.endorcements - a.endorcements;
+    });
+}
+
+function sortSkillsByName(skills) // Sorts the skills by alphabetical order based on name
+{
+    return skills.sort(function (a, b) 
+    {
+        console.log(a, b);
+        return a.name.localeCompare(b.name);
+    });
 }
